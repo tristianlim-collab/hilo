@@ -63,6 +63,16 @@ textScaleLink.rel = 'stylesheet';
 textScaleLink.href = 'text-scale-fix.css';
 document.head.appendChild(textScaleLink);
 
+const motionResponsiveLink = document.createElement('link');
+motionResponsiveLink.rel = 'stylesheet';
+motionResponsiveLink.href = 'motion-responsive.css';
+document.head.appendChild(motionResponsiveLink);
+
+const mobileNavLink = document.createElement('link');
+mobileNavLink.rel = 'stylesheet';
+mobileNavLink.href = 'mobile-nav-fix.css';
+document.head.appendChild(mobileNavLink);
+
 const brandPhotoLink = document.createElement('link');
 brandPhotoLink.rel = 'stylesheet';
 brandPhotoLink.href = 'brand-photo.css';
