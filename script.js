@@ -83,14 +83,17 @@ document.querySelectorAll('.brand strong').forEach((brandName) => {
   brandName.textContent = 'tristan zane c. lim';
 });
 
-document.querySelectorAll('.brand span').forEach((brandMark) => {
-  const brandPhoto = document.createElement('img');
-  brandPhoto.className = 'brand-photo';
-  brandPhoto.src = '5.jpg';
-  brandPhoto.alt = 'Portrait of Tristan Zane C. Lim';
-  brandPhoto.onerror = () => brandPhoto.remove();
-  brandMark.replaceWith(brandPhoto);
-});
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+if (currentPage === 'index.html' || currentPage === 'resume.html') {
+  document.querySelectorAll('.brand span').forEach((brandMark) => {
+    const brandPhoto = document.createElement('img');
+    brandPhoto.className = 'brand-photo';
+    brandPhoto.src = '5.jpg';
+    brandPhoto.alt = 'Portrait of Tristan Zane C. Lim';
+    brandPhoto.onerror = () => brandPhoto.remove();
+    brandMark.replaceWith(brandPhoto);
+  });
+}
 
 const footerDarkLink = document.createElement('link');
 footerDarkLink.rel = 'stylesheet';
