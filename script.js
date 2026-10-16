@@ -73,27 +73,15 @@ mobileNavLink.rel = 'stylesheet';
 mobileNavLink.href = 'mobile-nav-fix.css';
 document.head.appendChild(mobileNavLink);
 
-const brandPhotoLink = document.createElement('link');
-brandPhotoLink.rel = 'stylesheet';
-brandPhotoLink.href = 'brand-photo.css';
-document.head.appendChild(brandPhotoLink);
+const pageTransitionLink = document.createElement('link');
+pageTransitionLink.rel = 'stylesheet';
+pageTransitionLink.href = 'page-transition.css';
+document.head.appendChild(pageTransitionLink);
 
 document.title = document.title.replace(/Manuel Andres Buncio/gi, 'Tristan Zane Lim');
 document.querySelectorAll('.brand strong').forEach((brandName) => {
   brandName.textContent = 'tristan zane c. lim';
 });
-
-const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-if (currentPage === 'index.html' || currentPage === 'resume.html') {
-  document.querySelectorAll('.brand span').forEach((brandMark) => {
-    const brandPhoto = document.createElement('img');
-    brandPhoto.className = 'brand-photo';
-    brandPhoto.src = '5.jpg';
-    brandPhoto.alt = 'Portrait of Tristan Zane C. Lim';
-    brandPhoto.onerror = () => brandPhoto.remove();
-    brandMark.replaceWith(brandPhoto);
-  });
-}
 
 const footerDarkLink = document.createElement('link');
 footerDarkLink.rel = 'stylesheet';
